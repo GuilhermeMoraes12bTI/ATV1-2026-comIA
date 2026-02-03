@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CapsTeam - Conectando Times e Histórias</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Página de Login/Cadastro -->
+  <div id="authPage" class="page active">
+    <div class="container">
+      <header class="auth-header">
+        <div class="header-content">
+          <h1>⚽ CAMPO DE JOGO ⚽</h1>
+          <p class="slogan">Onde a Paixão pelos Times se Encontra</p>
+        </div>
+        <button id="themeToggle" class="theme-button">🌙 Tema Escuro</button>
+      </header>
+
+      <main class="auth-container">
+        <!-- Formulário de Login -->
+        <section id="loginSection" class="auth-section active">
+          <div class="form-card">
+            <h2>Bem-vindo de Volta</h2>
+            <form id="loginForm">
+              <div class="form-group">
+                <label for="loginNome">Nome:</label>
+                <input type="text" id="loginNome" name="nome" placeholder="Digite seu nome" required>
+              </div>
+              <div class="form-group">
+                <label for="loginSenha">Senha:</label>
+                <input type="password" id="loginSenha" name="senha" placeholder="Digite sua senha" required>
+              </div>
+              <button type="submit" class="btn-primary">Entrar</button>
+            </form>
+            <p class="toggle-text">Não tem uma conta? <button type="button" id="toggleToCadastro" class="link-button">Cadastre-se</button></p>
+            <div id="loginError" class="error-message"></div>
+          </div>
+        </section>
+
+        <!-- Formulário de Cadastro -->
+        <section id="cadastroSection" class="auth-section">
+          <div class="form-card">
+            <h2>Comece sua Jornada</h2>
+            <p class="form-subtitle">⚽ "Aqui, todo jogador é craque na sua história!" ⚽</p>
+            <form id="cadastroForm">
+              <div class="form-group">
+                <label for="cadastroNome">Nome:</label>
+                <input type="text" id="cadastroNome" name="nome" placeholder="Digite seu nome" required>
+              </div>
+              <div class="form-group">
+                <label for="cadastroIdade">Idade:</label>
+                <input type="number" id="cadastroIdade" name="idade" placeholder="Digite sua idade" min="1" max="120" required>
+              </div>
+              <div class="form-group">
+                <label for="cadastroSenha">Senha:</label>
+                <input type="password" id="cadastroSenha" name="senha" placeholder="Crie uma senha" required>
+              </div>
+              <div class="form-group">
+                <label for="cadastroTime">Time Favorito:</label>
+                <input type="text" id="cadastroTime" name="timeFavorito" placeholder="Ex: Palmeiras" required>
+              </div>
+              <button type="submit" class="btn-primary" id="cadastroBtn">Cadastrar</button>
+            </form>
+            <p class="toggle-text">Já tem uma conta? <button type="button" id="toggleToLogin" class="link-button">Faça login</button></p>
+            <div id="cadastroError" class="error-message"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>TeamHub - Seu espaço para celebrar seus times</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Página de Dashboard -->
+  <div id="dashboardPage" class="page">
+    <div class="container">
+      <header class="dash-header">
+        <div class="header-content">
+          <h1>⚽ CAMPO DE JOGO ⚽</h1>
+          <p class="slogan">Onde a Paixão pelos Times se Encontra</p>
+        </div>
+        <div class="header-buttons-vertical">
+          <button id="themeToggleDash" class="theme-button">🌙 Tema Escuro</button>
+          <button id="logoutBtn" class="btn-logout">Sair</button>
+        </div>
+      </header>
+
+      <!-- Mensagem de Boas-vindas -->
+      <div id="welcomeMessage" class="welcome-card">
+        <p id="welcomeText"></p>
+      </div>
+
+      <main class="dashboard-container">
+        <section class="users-section">
+          <div class="section-header">
+            <h2>Usuários Cadastrados</h2>
+            <button id="addUserBtn" class="btn-add-user">+ Novo Usuário</button>
+          </div>
+          <div id="usersGrid" class="users-grid">
+            <!-- Cards de usuários serão adicionados aqui dinamicamente -->
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>TeamHub - Seu espaço para celebrar seus times</p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
